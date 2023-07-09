@@ -1,11 +1,61 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "@/styles/Home.module.scss";
+import { useEffect } from "react";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  useEffect(() => {
+    // const paginations = document.querySelectorAll(".pagination a");
+    // paginations.forEach((pagination) => {
+    //   pagination.addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     const targetId = e.target.hash;
+    //     const target = document.querySelector(targetId);
+    //     target.scrollIntoView({ behavior: "smooth" });
+    //   });
+    // });
+    // // Intersection Observer
+    // const sections = document.querySelectorAll(".section");
+    // const observerRoot = document.querySelector(".fullPageScroll");
+    // const options = {
+    //   root: observerRoot,
+    //   rootMargin: "-50% 0px",
+    //   threshold: 0,
+    // };
+    // const observer = new IntersectionObserver(doWhenIntersect, options);
+    // console.log(observer);
+    // sections.forEach((section) => {
+    //   observer.observe(section);
+    // });
+    // /**
+    //  * 交差したときに呼び出す関数
+    //  * @param entries - IntersectionObserverEntry IntersectionObserverが交差したときに渡されるオブジェクトです。
+    //  */
+    // function doWhenIntersect(entries) {
+    //   entries.forEach((entry) => {
+    //     if (entry.isIntersecting) {
+    //       console.log(entry.target);
+    //       activatePagination(entry.target);
+    //     }
+    //   });
+    // }
+    // /**
+    //  * ページネーションの大きさを変える関数
+    //  * @param element - HTMLElement 現在表示中のスライドのHTML要素を引数に取ります。
+    //  */
+    // function activatePagination(element) {
+    //   const currentActiveIndex = document.querySelector("#pagination .active");
+    //   if (currentActiveIndex !== null) {
+    //     currentActiveIndex.classList.remove("active");
+    //   }
+    //   const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
+    //   newActiveIndex.classList.add("active");
+    // }
+  }, []);
+
   return (
     <>
       <Head>
@@ -15,109 +65,34 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
+        <div className="fullPageScroll">
+          <section id="section1" className="section ">
+            {/* <img src="./cat.jpg" /> */}
+          </section>
+          <section id="section1" className="section section1">
+            <img src="./cat.jpg" />
+          </section>
+          <section id="section2" className="section section2">
+            <img src="./cat.jpg" />
+          </section>
+          <section id="section3" className="section section3">
+            <img src="./cat.jpg" />
+          </section>
+          <section id="section4" className="section section4">
+            <img src="./cat.jpg" />
+          </section>
+          <section id="section5" className="section section5">
+            <img src="./cat.jpg" />
+          </section>
         </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+        <nav id="pagination" className="pagination">
+          <a id="pagination1" href="#section1"></a>
+          <a id="pagination2" href="#section2"></a>
+          <a id="pagination3" href="#section3"></a>
+          <a id="pagination4" href="#section4"></a>
+          <a id="pagination5" href="#section5"></a>
+        </nav>
       </main>
     </>
-  )
+  );
 }
